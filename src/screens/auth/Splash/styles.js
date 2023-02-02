@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../../utils/colors";
 
 export const styles = StyleSheet.create({
   container: {
@@ -13,16 +14,16 @@ export const styles = StyleSheet.create({
     padding: 9,
   },
   title: {
-    color: "#000000",
+    color: colors.black,
     fontSize: 40,
     fontWeight: "bold",
   },
   innerTitle: {
-    color: "#FCA34D",
+    color: colors.orange,
     textDecorationLine: "underline",
   },
   signInButton: {
-    color: "#4F63AC",
+    color: colors.blue,
     fontWeight: "bold",
     marginTop: 30,
   },
