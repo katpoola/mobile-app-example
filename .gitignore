@@ -65,4 +65,4 @@ buck-out/
 /vendor/bundle/
 
 
-.env
+auth.json
