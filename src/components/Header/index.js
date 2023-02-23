@@ -10,6 +10,8 @@ const Header = ({
   showBack,
   showSearch,
   showLogout,
+  onSearchKeyword,
+  keyword,
 }) => {
   const [showSearchInput, setShowSearchInput] = useState(false);
 
@@ -48,7 +50,13 @@ const Header = ({
           <View style={styles.space} />
         )}
       </View>
-      {showSearchInput ? <Input placeholder="Type your keyword" /> : null}
+      {showSearchInput ? (
+        <Input
+          onChangeText={onSearchKeyword}
+          value={keyword}
+          placeholder="Type your keyword"
+        />
+      ) : null}
     </View>
   );
 };
