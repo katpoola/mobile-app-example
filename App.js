@@ -8,6 +8,7 @@ import Signin from "./src/screens/auth/Signin";
 import Home from "./src/screens/app/Home";
 import Favorites from "./src/screens/app/Favorites";
 import Profile from "./src/screens/app/Profile";
+import Settings from "./src/screens/app/Settings";
 import ProductDetails from "./src/screens/app/ProductDetails";
 
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
@@ -21,8 +22,24 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-import Config from "react-native-config";
 import { colors } from "./src/utils/colors";
+
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const WEB_CLIENT_ID =
   "1015537669671-6hpfgo7qr69ga792rle9cp6a1pn62pp4.apps.googleusercontent.com";
@@ -59,7 +76,7 @@ const Tabs = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Favorites" component={Favorites} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
   );
 };
